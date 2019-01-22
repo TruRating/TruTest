@@ -1,6 +1,6 @@
 ﻿# Welcome to the TruRating Software engineer Technical Test
 
-In the given app, investigate the pages served by the following controllers
+In the given app, investigate the following controllers and the pages they serve
 
 - HomeController
 - EditUserController 
