@@ -1,0 +1,74 @@
+﻿@model TruRatingTest.Entities.User
+
+<br />
+<br />
+
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        Edit User
+    </div>
+    <div class="panel-body">
+                @if (ViewBag.Errors != null)
+                {
+                <ul>
+                    @foreach (var error in ViewBag.Errors)
+                    {
+                        <li>
+                            <p class="text-danger"> @error</p>
+                        </li>
+                    }
+                </ul>
+                }
+
+                <div class="row">
+                    <div class="col-md-12">
+                        @using (Html.BeginForm("Post", "EditUser", FormMethod.Post))
+                        {
+
+                            @Html.HiddenFor(t => t.Id)
+                            <fieldset>
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                            @Html.LabelFor(x => x.FirstName)
+                                            @Html.TextBoxFor(t => t.FirstName, new Dictionary<string, object> { { "class", "form-control" } })
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                            @Html.LabelFor(x => x.LastName)
+                                            @Html.TextBoxFor(t => t.LastName, new Dictionary<string, object> { { "class", "form-control" } })
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                            @Html.LabelFor(x => x.UserName)
+                                            @Html.TextBoxFor(t => t.UserName, new Dictionary<string, object> { { "class", "form-control" } })
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                            @Html.LabelFor(x => x.EmailAddress)
+                                            @Html.TextBoxFor(t => t.EmailAddress, new Dictionary<string, object> { { "class", "form-control" } })
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        <div class="form-group">
+                                            <button type="submit" class="btn btn-success" id="submit_step1">Save</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        }
+                    </div>
+                </div>
+            </div>
+</div>
